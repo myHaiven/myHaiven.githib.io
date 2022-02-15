@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello, world!</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="description" content="" />
+    </head>
+    <body>
+        <button id="generate-btn">Generate Script and Affect</button>
+        <h1>Script</h1>
+        <h2 id="script"></h2>
+        <h1>Affect</h1>
+        <h2 id="affect"></h2>
+    </body>
+    <script>
+        const scriptObj = {
+            1: "banana and mustard sandwiches",
+            2: "wolf ring lights are fantastic",
+            3: "hungry action hippos fruit",
+            4: "another dog secretary show",
+            5: "snow meteor down the chimney",
+            6: "birds make new jingles",
+            7: "heavy undersea birthday pumkins",
+            8: "fluffy baseboard yogurt division",
+            9: "zebra cats walking on lamps",
+            10: "five special guest treasures",
+            11: "ripped ocean jumper",
+            12: "five dollar slaw onion cure",
+            13: "the thunder break craze",
+            14: "join the Ear Look club",
+        };
+        const affectObj = {
+            1: "neutral",
+            2: "anger",
+            3: "joy",
+            4: "fear",
+            5: "disgust",
+            6: "surprise",
+            7: "sadness",
+        };
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        function generateRandomScriptAndAffect() {
+            const scriptNum = getRandomIntInclusive(1, 14);
+            const affectNum = getRandomIntInclusive(1, 7);
+            document.getElementById("script").innerHTML = `${scriptNum}: ${scriptObj[scriptNum]}`;
+            document.getElementById("affect").innerHTML = `${affectNum}: ${affectObj[affectNum]}`;
+        }
+        document.getElementById("generate-btn").onclick = generateRandomScriptAndAffect;
+        generateRandomScriptAndAffect();
+    </script>
+</html>
